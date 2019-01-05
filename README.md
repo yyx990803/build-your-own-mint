@@ -1,8 +1,10 @@
 ## Build Your Own Mint
 
-**IMPORTANT:** Credentials are stored in `lib/credentials.json`. This is checked into the repo, so **USE A PRIVATE REPO**. Do not use a public fork and accidentally push your tokens to it!
+### Important Disclaimer
 
-Also, all this repo does is talking to Plaid/Google APIs and writing tokens to your local file system. If you don't feel safe entering real bank credentials, audit the code yourself to make sure.
+- Credentials are stored in `lib/credentials.json`. This is checked into the repo, so **USE A PRIVATE REPO**. Do not use a public fork and accidentally push your tokens to it! I will not take responsibility for any potential leak of sensitive information.
+
+- All this repo does is talking to Plaid/Google APIs and writing tokens to your local file system. If you don't feel safe entering real bank credentials, audit the code yourself to make sure.
 
 ### Setting up API keys
 
@@ -18,7 +20,7 @@ Also, all this repo does is talking to Plaid/Google APIs and writing tokens to y
 
   This process needs to be repeated for each bank you want to connect. Make sure to run each with a different `account` name.
 
-- If you've done everything correctly, running `npm run test-plaid` now should generate a `transactions.json` at the root of the project with the transactions in your accounts.
+- If you've done everything correctly, running `npm run test-plaid` now should log the recent transactions in your connected accounts.
 
 #### Sheets
 
@@ -26,7 +28,11 @@ Also, all this repo does is talking to Plaid/Google APIs and writing tokens to y
 
 - First, create a Google Sheets spreadsheet, and save its ID in `lib/credentials.json` as `sheets.sheet_id`.
 
-- Then, go to [Google Sheets API Quickstart](https://developers.google.com/sheets/api/quickstart/nodejs), and click the "Enable the Google Sheets API" button. Follow instructions and download the JSON file. Copy the corresponding fields into `lib/credentials.json`.
+- Then, go to [Google Sheets API Quickstart](https://developers.google.com/sheets/api/quickstart/nodejs), and click the "Enable the Google Sheets API" button. Follow instructions and download the JSON file. Copy the following fields into `lib/credentials.json` under `sheets`:
+
+  - `client_id`
+  - `client_secret`
+  - `redirect_uris`
 
 - Run `npm run token-sheets`. This will prompt for auth and save the token in `lib/credentials.json` under `sheets.token`.
 

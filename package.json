@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "test": "node index.js",
-    "test-plaid": "node scripts/testTransactions.js",
-    "test-sheets": "node scripts/testSheetsUpdate.js",
+    "test-plaid": "node scripts/testPlaid.js",
+    "test-sheets": "node scripts/testSheets.js",
     "token-plaid": "node scripts/plaidServer.js",
     "token-sheets": "node scripts/getSheetsToken.js"
   },
