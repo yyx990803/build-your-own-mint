@@ -1,0 +1,23 @@
+{
+  "name": "build-your-own-mint",
+  "private": true,
+  "main": "index.js",
+  "author": "Evan You",
+  "license": "MIT",
+  "scripts": {
+    "test": "node index.js",
+    "test-plaid": "node scripts/testTransactions.js",
+    "test-sheets": "node scripts/testSheetsUpdate.js",
+    "token-plaid": "node scripts/plaidServer.js",
+    "token-sheets": "node scripts/getSheetsToken.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
+    "googleapis": "27",
+    "moment": "^2.23.0",
+    "plaid": "^2.10.0"
+  }
+}

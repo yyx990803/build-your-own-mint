@@ -1,0 +1,44 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - dependency-cache-{{ checksum "package.json" }}
+          - dependency-cache-
+
+      - run: npm install
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+      - run: node index.js
+
+workflows:
+  version: 2
+
+  test:
+    jobs:
+      - build
+
+  nightly:
+    triggers:
+      - schedule:
+          # UTC 5:00 AM = EST 12:00 AM daily
+          cron: "0 5 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
