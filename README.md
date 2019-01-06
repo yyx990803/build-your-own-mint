@@ -52,4 +52,4 @@
 
 ### Automate the Updates
 
-The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time). All you need to do is setup your project on CircleCI and that's it (again, make sure to use a private repo). You can adjust the cron config to tweak the time/frequency of the updates.
+The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time).  You can adjust the cron config to tweak the time/frequency of the updates. But before you set up your repo with the CI, you will need to remove the `credentials.json` from `.gitignore` and check it in -- **SO MAKE SURE TO USE A PRIVATE REPO**. Alternatively, you can rework the code and use environment variables instead.
