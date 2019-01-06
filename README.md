@@ -6,11 +6,11 @@ All this repo does is talking to Plaid/Google APIs and writing tokens to your lo
 
 ### Setting up API keys
 
+First things first - rename `.env.sample` to `.env`. Variables in this file will be loaded as environment variables. This file is ignored by Git.
+
 #### Plaid
 
 - You will first need to sign up for [Plaid](https://plaid.com/) and apply for the development plan. You might need to wait for a day or two to get approved. It's free and limited to 100 items (i.e. banks), so it should be more than enough for your personal use.
-
-- Rename `.env.sample` to `.env`.
 
 - Once approved, fill out the following in `.env`:
 
