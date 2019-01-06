@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const readline = require('readline')
 const oAuth2Client = require('../lib/googleClient')
+const saveEnv = require('./saveEnv')
 
 const authUrl = oAuth2Client.generateAuthUrl({
   access_type: 'offline',
@@ -17,15 +18,17 @@ const rl = readline.createInterface({
   output: process.stdout,
 })
 
-const credPath = path.resolve(__dirname, '../lib/credentials.json')
-
 rl.question('Enter the code from that page here: ', (code) => {
   rl.close()
   oAuth2Client.getToken(code, (err, token) => {
     if (err) return console.error('Error while trying to retrieve access token', err)
-    const current = JSON.parse(fs.readFileSync(credPath, 'utf-8'))
-    current.sheets.token = token
-    fs.writeFileSync(credPath, JSON.stringify(current, null, 2))
-    console.log(`Token stored in ${credPath}.`)
+
+    let vars = {}
+    const tokenEnvVars = Object.keys(token).forEach(key => {
+      obj[`SHEETS_${key.toUpperCase()}`] = token[key]
+    })
+
+    saveEnv(vars)
+    console.log(`Token stored in .env.`)
   })
 })

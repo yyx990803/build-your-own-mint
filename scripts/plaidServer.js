@@ -1,4 +1,5 @@
-require('dotenv').config()
+const dotenv = require('dotenv')
+dotenv.config()
 
 const account = process.argv[2]
 if (!account) {
@@ -12,7 +13,7 @@ const moment = require('moment')
 const express = require('express')
 const bodyParser = require('body-parser')
 const client = require('../lib/plaidClient')
-const creds = require('../lib/credentials.json')
+const saveEnv = require('./saveEnv')
 
 const app = express()
 app.use(express.static(path.resolve(__dirname)))
@@ -35,11 +36,10 @@ let ITEM_ID = null
 
 function saveAccessToken(token) {
   console.log()
-  console.log(`Saved access token for account "${account}": ${token}`)
-  const jsonPath = path.resolve(__dirname, '../lib/credentials.json')
-  const current = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
-  current.plaid.tokens[account] = token
-  fs.writeFileSync(jsonPath, JSON.stringify(current, null, 2))
+  console.log(`Saving access token for account "${account}": ${token}`)
+  saveEnv({
+    [`PLAID_TOKEN_${account}`]: token
+  })
   console.log('Saved.')
   console.log()
 }
