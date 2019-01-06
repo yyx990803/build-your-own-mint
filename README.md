@@ -2,7 +2,7 @@
 
 ### Important Disclaimer
 
-- Credentials are stored in `lib/credentials.json`. This is checked into the repo, so **USE A PRIVATE REPO**. Do not use a public fork and accidentally push your tokens to it! I will not take responsibility for any potential leak of sensitive information.
+- Credentials are stored in `lib/credentials.json`. (Note this file is in .gitignore)
 
 - All this repo does is talking to Plaid/Google APIs and writing tokens to your local file system. If you don't feel safe entering real bank credentials, audit the code yourself to make sure.
 
@@ -11,6 +11,8 @@
 #### Plaid
 
 - You will first need to sign up for [Plaid](https://plaid.com/) and apply for the development plan. You might need to wait for a day or two to get approved. It's free and limited to 100 items (i.e. banks), so it should be more than enough for your personal use.
+
+- Rename `lib/credentials.sample.json` to `lib/credentials.json`.
 
 - Once approved, fill out `client_id`, `secret` and `public_key` in `lib/credentials.json` under `plaid`.
 
