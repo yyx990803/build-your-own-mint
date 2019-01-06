@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { updateSheet } = require('../lib/update')
 
 updateSheet([{

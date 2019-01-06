@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const account = process.argv[2]
 if (!account) {
   throw new Error('An account name must be provided.')
@@ -23,7 +25,7 @@ app.use(bodyParser.json())
 app.get('/', (req, res, next) => {
   res.render(path.resolve(__dirname, 'plaid.ejs'), {
     PLAID_ACCOUNT: account,
-    PLAID_PUBLIC_KEY: creds.plaid.public_key
+    PLAID_PUBLIC_KEY: process.env.PLAID_PUBLIC_KEY
   })
 })
 
