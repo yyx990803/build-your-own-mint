@@ -25,7 +25,7 @@ rl.question('Enter the code from that page here: ', (code) => {
 
     let vars = {}
     const tokenEnvVars = Object.keys(token).forEach(key => {
-      obj[`SHEETS_${key.toUpperCase()}`] = token[key]
+      vars[`SHEETS_${key.toUpperCase()}`] = token[key]
     })
 
     saveEnv(vars)
