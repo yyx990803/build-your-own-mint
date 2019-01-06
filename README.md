@@ -1,14 +1,14 @@
-## Build Your Own Mint
+# Build Your Own Mint
 
-### Important Disclaimer
+## Important Disclaimer
 
 All this repo does is talking to Plaid/Google APIs and writing tokens to your local file system. If you don't feel safe entering real bank credentials, audit the code yourself to make sure.
 
-### Setting up API keys
+## Setting up API keys
 
 First things first - rename `.env.sample` to `.env`. Variables in this file will be loaded as environment variables. This file is ignored by Git.
 
-#### Plaid
+### Plaid
 
 - You will first need to sign up for [Plaid](https://plaid.com/) and apply for the development plan. You might need to wait for a day or two to get approved. It's free and limited to 100 items (i.e. banks), so it should be more than enough for your personal use.
 
@@ -26,9 +26,9 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 
 - If you've done everything correctly, running `npm run test-plaid` now should log the recent transactions in your connected accounts.
 
-#### Sheets
+### Google Sheets
 
-> I use a Google Sheet because it's convenient. If you want to build your own fancy interface, you can totally do that - but that's out of scope for this demo.
+> I use a Google Sheet because it's convenient. If you don't trust Google or want to build your own fancy interface, you can totally do that - but that's out of scope for this demo.
 
 - First, create a Google Sheets spreadsheet, and save its ID in `lib/credentials.json` as `sheets.sheet_id`.
 
@@ -42,7 +42,7 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 
 - Now run `npm run test-sheets`. You should see your sheet's cell A1 with "It worked!".
 
-### Transform your Data
+## Transform your Data
 
 - With the APIs sorted out, now it's time to connect them. Open `lib/transform.js` - this is where you can write your own logic to map incoming transactions to cell updates. How to structure the spreadsheet to use that data is up to you.
 
@@ -52,6 +52,8 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 
 - This repo only handles transactions, but it should be pretty straightforward to add balances. (logic for fetching balances is in `fetch.js` already)
 
-### Automate the Updates
+## Automate the Updates
 
 The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time). You can adjust the cron config to tweak the time/frequency of the updates. Note that your local `.env` is not checked into the repo, so you will need to copy all those env variables into your CircleCI project settings.
+
+This is totally optional if you don't trust CI with your tokens. Just run it manually when you want to update things.
