@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv-safe').config()
 
 const { fetchTransactions } = require('./lib/fetch')
 const { transformTransactionsToUpdates } = require('./lib/transform')
