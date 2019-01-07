@@ -32,7 +32,7 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 
 - First, create a Google Sheets spreadsheet, and save its ID in `.env` as `SHEETS_SHEET_ID`.
 
-- Then, go to [Google Sheets API Quickstart](https://developers.google.com/sheets/api/quickstart/nodejs), and click the "Enable the Google Sheets API" button. Follow instructions and download the credentials JSON file. Fill in the following fields in `.env`:
+- Then, go to [Google Sheets API Quickstart](https://developers.google.com/sheets/api/quickstart/nodejs), and click the "Enable the Google Sheets API" button. Follow instructions and download the credentials JSON file. Take a look at the file and fill in the following fields in `.env`:
 
   - `SHEETS_CLIENT_ID`
   - `SHEETS_CLIENT_SECRET`
