@@ -57,3 +57,12 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time). You can adjust the cron config to tweak the time/frequency of the updates. Note that your local `.env` is not checked into the repo, so you will need to copy all those env variables into your CircleCI project settings.
 
 This is totally optional if you don't trust CI with your tokens. Just run it manually when you want to update things.
+
+### Code Visualization:
+
+If you want the good work to continue please support us on
+
+ [![Watch the video](https://img.youtube.com/vi/h9Rzg2bazho/0.jpg)](https://www.youtube.com/watch?v=h9Rzg2bazho)
+
+ [https://www.youtube.com/watch?v=h9Rzg2bazho](https://www.youtube.com/watch?v=h9Rzg2bazho)
+
