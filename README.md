@@ -6,7 +6,8 @@ All this repo does is talk to Plaid/Google APIs and write tokens to your local f
 
 ## Setting up API keys
 
-First things first - rename `.env.sample` to `.env`. Variables in this file will be loaded as environment variables. This file is ignored by Git.
+1. First things first - rename `.env.sample` to `.env`. Variables in this file will be loaded as environment variables. This file is ignored by Git.
+1. Run `npm install` in the repo root.
 
 ### Plaid
 
