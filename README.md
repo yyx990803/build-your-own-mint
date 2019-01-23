@@ -6,7 +6,7 @@ All this repo does is talk to Plaid/Google APIs and write tokens to your local f
 
 ## Install Dependencies
 
-This project uses Node.js. Run `npm install` in the repo root to install necessary dependencies.
+This project uses Node.js. Run `yarn` (or `npm install` if you don't have yarn) in the repo root to install necessary dependencies.
 
 ## Setting up API keys
 
