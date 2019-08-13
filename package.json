@@ -19,6 +19,7 @@
     "fs-extra": "^7.0.1",
     "googleapis": "27",
     "moment": "^2.23.0",
+    "node-fetch": "^2.6.0",
     "plaid": "^2.10.0"
   }
 }

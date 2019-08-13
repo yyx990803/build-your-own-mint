@@ -58,6 +58,6 @@ First things first - rename `.env.sample` to `.env`. Variables in this file will
 
 ## Automate the Updates
 
-The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time). You can adjust the cron config to tweak the time/frequency of the updates. Note that your local `.env` is not checked into the repo, so you will need to copy all those env variables into your CircleCI project settings.
+The repo contains a [CircleCI](https://circleci.com/) config file which runs the update every day at 5AM UTC (midnight US Eastern time). You can adjust the cron config to tweak the time/frequency of the updates. Note that your local `.env` is not checked into the repo, so you will need to copy all those env variables into your CircleCI project settings. You can call `node scripts/syncEnv.js` to automate that. 
 
 This is totally optional if you don't trust CI with your tokens. Just run it manually when you want to update things.
