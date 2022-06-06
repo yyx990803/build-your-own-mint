@@ -6,9 +6,8 @@ const { updateSheet, getSheetValues, getNamedRanges } = require('./lib/sheetsCru
 const { runAudit } = require('./lib/audit')
 
 ;(async () => {
-
-  const transactions = await fetchTransactions('2021-01-01') // TO DO: read this startDate from json config.
+  const transactions = await fetchTransactions('2021-01-01') // TO DO: read this startDate from config.
   const updates = transformTransactionsToUpdates(transactions)
   updateSheet(updates)
-  await runAudit('2022-01-01') // TO DO get this date from config
+  await runAudit('2022-01-01') // TO DO: get this date from config
 })()
