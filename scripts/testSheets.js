@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const { updateSheet } = require('../lib/update')
+const { updateSheet } = require('../lib/sheetsCrud')
 
 updateSheet([{
   range: 'A1',
