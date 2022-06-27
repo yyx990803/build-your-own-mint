@@ -17,6 +17,7 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "fs": "^0.0.1-security",
     "fs-extra": "^7.0.1",
     "googleapis": "100.0.0",
     "moment": "^2.23.0",
